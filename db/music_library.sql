@@ -9,7 +9,7 @@ CREATE TABLE artists (
 CREATE TABLE albums (
     id BIGSERIAL PRIMARY KEY,
     title VARCHAR(255),
-    GENRE VARCHAR(255),
-    artist_id BIGINT NOT NULL,
-    FOREIGN KEY (artist_id) REFERENCES artists(id)
+    genre VARCHAR(255),
+    artist_id BIGINT,
+    FOREIGN KEY (artist_id) REFERENCES artists(id) ON DELETE SET NULL
 );
