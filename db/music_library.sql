@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS artists;
+
+CREATE TABLE artists (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE albums (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    GENRE VARCHAR(255),
+    artist_id BIGINT NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES artists(id)
+);
